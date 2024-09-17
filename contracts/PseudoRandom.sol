@@ -20,7 +20,7 @@ contract LudoGame {
     event PlayerMoved(address player, uint256 newPosition);
     event PlayerWon(address player);
 
-    // Constructor to initialize the game (no visibility needed)
+    // Constructor to initialize the game 
     constructor() {
         seed = block.timestamp;
     }
