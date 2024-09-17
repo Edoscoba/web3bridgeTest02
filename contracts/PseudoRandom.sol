@@ -7,12 +7,12 @@ contract LudoGame {
     // Mapping of player addresses to their turns
     mapping(address => bool) public playerTurns;
 
-    uint256 public currentTurn; // Tracks which player's turn it is (by index)
-    uint256 public numPlayers;  // Total number of players
-    uint256 public mapSize = 52; // Map size, 52 squares on the board
-    uint256 public diceSize = 6; // Dice size, a standard 6-sided dice
+    uint256 public currentTurn; 
+    uint256 public numPlayers;  
+    uint256 public mapSize = 52; 
+    uint256 public diceSize = 6; 
 
-    uint256 public seed; // Seed for random dice rolls
+    uint256 public seed; 
     address[] public players; // Array to store player addresses
 
     event DiceRolled(address player, uint256 roll);
@@ -76,7 +76,7 @@ contract LudoGame {
 
         // Switch turns to the next player
         playerTurns[msg.sender] = false;
-        currentTurn = (currentTurn + 1) % numPlayers; // Wraps around if currentTurn exceeds numPlayers
+        currentTurn = (currentTurn + 1) % numPlayers;
 
         address nextPlayer = players[currentTurn];
         playerTurns[nextPlayer] = true;
