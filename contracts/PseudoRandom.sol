@@ -1,4 +1,5 @@
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
 
 contract LudoGame {
     // Mapping of player addresses to their current positions
@@ -82,7 +83,7 @@ contract LudoGame {
         playerTurns[nextPlayer] = true;
     }
 
-    // Function to get the address of the player whose turn it is
+
     function getPlayerAddress(uint256 turnNumber) public view returns (address) {
         require(turnNumber < numPlayers, "Invalid turn number");
         return players[turnNumber];
